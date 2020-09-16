@@ -1,0 +1,22 @@
+name: "Aura SAST scan"
+description: "Scan your code with the Aura Framework"
+
+inputs:
+  aura-version
+    description: "Version of the aura docker image
+    required: true
+    default: "dev"
+
+  aura-image-repository
+    description: "Aura image repository location"
+    required: true
+    default: "rootlug/aura-security"
+
+runs:
+  using: "docker"
+  image: "docker://${{ inputs.aura-image-repository }}:${{ inputs.aura-version }}"
+  args:
+    - "scan"
+    - "/github/home"
+    - "-f"
+    - "github"
