@@ -10,4 +10,4 @@ runs:
     - "-f"
     - "sarif:///github/home/aura_ci_report.sarif"
     - "-f"
-    - "plain"
+    - "text"
