@@ -8,4 +8,6 @@ runs:
     - "scan"
     - "/github/home"
     - "-f"
-    - "github"
+    - "sarif:///github/home/aura_ci_report.sarif"
+    - "-f"
+    - "plain"
